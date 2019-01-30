@@ -47,7 +47,6 @@ for item in data:
       csv_writer = csv.writer(csv_file)
       for i in github_dic :
          list = github_dic[i]
-         print list
          csv_writer.writerow(list)
       
 print(github_dic)
