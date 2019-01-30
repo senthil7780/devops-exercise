@@ -29,16 +29,15 @@ gh_session.auth = (username, token)
 
 # get the list of repos belonging to me
 for item in data:
-    item = item.split("/")
-    orgname = item[0]
-    reponame = item[1]
-    urltest = 'https://api.github.com/orgs/{}/repos'
-    #url = 'https://api.github.com/orgs/'+ orgname + '/repos'
-    print urltest.format(orgname)
-    repos = json.loads(gh_session.get(urltest.format(orgname)).text)
-    pprint(repos)
-# print the repo names
+   item = item.split("/")
+   orgname = item[0]
+   reponame = item[1]
+   urltest = 'https://api.github.com/orgs/{}/repos'
+   #url = 'https://api.github.com/orgs/'+ orgname + '/repos'
+   print urltest.format(orgname)
+   repos = json.loads(gh_session.get(urltest.format(orgname)).text)
+   #pprint(repos)
 
-#for repo in repos:
-   #print ""
-   # print("Name of the repo: %s Clone URL: %s " % (repo['name'], repo['clone_url']))
+   for repo in repos:
+      #print repo
+      print("Name of the repo: %s Clone URL: %s " % (repo['name'], repo['clone_url']))
